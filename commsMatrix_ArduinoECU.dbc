@@ -1,0 +1,60 @@
+VERSION "x105"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ArduinoECU ECU GenericGateway
+
+BO_ 257 LinearAccel_G: 6 ECU
+ SG_ G_Accel_X_Axis : 0|16@1+ (0.00006103515,-1.9999997952) [-1.9999997952|1.99993876005] "g" GenericGateway
+ SG_ G_Accel_Y_Axis : 16|16@1+ (0.00006103515,-1.9999997952) [-1.9999997952|1.99993876005] "g" GenericGateway
+ SG_ G_Accel_Z_Axis : 32|16@1+ (0.00006103515,-1.9999997952) [-1.9999997952|1.99993876005] "g" GenericGateway
+CM_ "Considering 1g is 16384 raw (with MPU6050, which has 2g sensitivity), scale should be 1/16384 for g output";
+
+BO_ 101 LinearAccel_MPS2: 6 ECU
+ SG_ MPS2_Accel_X_Axis : 0|16@1+ (0.00059855041,-19.6133) [-19.6133|19.6127014496] "m/s^2" GenericGateway
+ SG_ MPS2_Accel_Y_Axis : 16|16@1+ (0.00059855041,-19.6133) [-19.6133|19.6127014496] "m/s^2" GenericGateway
+ SG_ MPS2_Accel_Z_Axis : 32|16@1+ (0.00059855041,-19.6133) [-19.6133|19.6127014496] "m/s^2" GenericGateway
+CM_ "Considering 1g is 16384 raw, (with MPU6050, which has 2g sensitivity) scale should be g * 1/16384 = 9.80665/16384 for m/s^2 output";
+
+BO_ 127 GyroscopeData: 4 ECU
+ SG_ X_Angle : 0|9@1+ (1,0) [0|359] "Angle_Deg" GenericGateway
+ SG_ Y_Angle : 9|9@1+ (1,0) [0|359] "Angle_Deg"  GenericGateway
+ SG_ Z_Angle : 18|9@1+ (1,0) [0|359] "Angle_Deg"  GenericGateway
+
+BO_TX_BU_ 257 : ArduinoECU;
+BO_TX_BU_ 101 : ArduinoECU;
+BO_TX_BU_ 127 : ArduinoECU;
+
+CM_ "Written manually";
+
