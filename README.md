@@ -4,7 +4,7 @@ This repository is a collection of multiple tools:
 
   - A python script which decodes DBC files (DBC is a descriptor for CAN networks) and sends CAN signals through IPv4 UDP, from a socketcan-enabled interface on a linux machine (Originally developed for Raspberry Pi with the PiCan2 adapter)
   - A Java 1.8 tool using JavaFX for the GUI which shows received signals
-  - An example of a DBC file plus an example of an "ECU Node" running on the Arduino IDE (used just to showcase the project)
+  - An example of a DBC file plus an example of an "ECU Node" running on Arduino (used just to showcase the project)
 
 
 ### Todos
